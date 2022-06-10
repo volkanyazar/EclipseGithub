@@ -1,0 +1,3 @@
+# EclipseGithub
+
+BİLİMSEL DERGİ YÖNETİM SİSTEMİ ÜZERİNE YÜRÜTÜLEN BİR PROJE
