@@ -18,5 +18,5 @@ public class ArticleWithUserDto {
 	private String gender;
 	private String location;
 	
-//DTO - DATA TRANSFORMATION OBJECT
+//DTO - DATA TRANSFORMATION OBJECT //TRANSFORM
 }
