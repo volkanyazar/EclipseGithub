@@ -1,4 +1,4 @@
-package articlemanagement.articleManagement.entities.concretes;
+package articlemanagement.articleManagement.core.entities;
 
 import java.util.List;
 

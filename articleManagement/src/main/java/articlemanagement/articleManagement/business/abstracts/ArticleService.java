@@ -5,6 +5,7 @@ import java.util.List;
 import articlemanagement.articleManagement.core.utilities.results.DataResult;
 import articlemanagement.articleManagement.core.utilities.results.Result;
 import articlemanagement.articleManagement.entities.concretes.Article;
+import articlemanagement.articleManagement.entities.dtos.ArticleWithUserDto;
 
 public interface ArticleService {
 	DataResult<List<Article>> getAll();
@@ -18,4 +19,5 @@ public interface ArticleService {
 	DataResult<List<Article>> getByArticleIdIn(List<Integer> articles);
 	
 	DataResult<List<Article>> getByJournalNameContains(String journalName);
+	DataResult<List<ArticleWithUserDto>> getArticleWithAuthorDetails();
 }

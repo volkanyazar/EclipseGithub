@@ -15,6 +15,7 @@ import articlemanagement.articleManagement.core.utilities.results.SuccessDataRes
 import articlemanagement.articleManagement.core.utilities.results.SuccessResult;
 import articlemanagement.articleManagement.dataAccess.abstracts.ArticleDao;
 import articlemanagement.articleManagement.entities.concretes.Article;
+import articlemanagement.articleManagement.entities.dtos.ArticleWithUserDto;
 
 @Service
 public class ArticleManager implements ArticleService{
@@ -73,5 +74,11 @@ public class ArticleManager implements ArticleService{
 		Sort sort = Sort.by(Sort.Direction.DESC,"journalName");
 		return new SuccessDataResult<List<Article>>
 		(this.articleDao.findAll(sort),"Başarılı bir şekilde sıralandı");
+	}
+
+	@Override
+	public DataResult<List<ArticleWithUserDto>> getArticleWithAuthorDetails() {
+		return new SuccessDataResult<List<ArticleWithUserDto>>
+		(this.articleDao.getArticleWithAuthorDetails(),"Veriler Başarıyla Listelendi");
 	}
 }

@@ -1,17 +1,19 @@
-package articlemanagement.articleManagement.dataAccess.abstracts;
+package articlemanagement.articleManagement.core.dataAccess;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import articlemanagement.articleManagement.entities.concretes.User;
+import articlemanagement.articleManagement.core.entities.User;
 
 public interface UserDao extends JpaRepository<User,Integer>{
 	
 		User getByUserType(String typeName);
 		
 		User getByUsername(String userName);
+		
+		User findByEmail(String email);
 		
 		List<User> getByUserIdIn(List<Integer> users);
 		

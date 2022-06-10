@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import articlemanagement.articleManagement.business.abstracts.UserService;
+import articlemanagement.articleManagement.core.dataAccess.UserDao;
+import articlemanagement.articleManagement.core.entities.User;
 import articlemanagement.articleManagement.core.utilities.results.DataResult;
 import articlemanagement.articleManagement.core.utilities.results.Result;
 import articlemanagement.articleManagement.core.utilities.results.SuccessDataResult;
 import articlemanagement.articleManagement.core.utilities.results.SuccessResult;
-import articlemanagement.articleManagement.dataAccess.abstracts.UserDao;
-import articlemanagement.articleManagement.entities.concretes.User;
 
 @Service
 public class UserManager implements UserService{
@@ -65,6 +65,11 @@ public class UserManager implements UserService{
 	public DataResult<List<User>> getByUsernameAndUserType_TypeId(String userName, int userType) {
 		return new SuccessDataResult<List<User>>
 		(this.userDao.getByUsernameAndUserType_TypeId(userName, userType),"Kullanıcılar başarıyla Listelendi");
+	}
+
+	@Override
+	public DataResult<User> findByEmail(String email) {
+		return new SuccessDataResult<User>(this.userDao.findByEmail(email),"Kullanıcı bulundu");
 	}
 
 

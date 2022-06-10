@@ -1,6 +1,10 @@
-package articlemanagement.articleManagement.entities.concretes;
+package articlemanagement.articleManagement.core.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,10 +27,18 @@ public class User {
 	@Column(name="last_name")
     private String lastName;
 	
+	@Column(name="email")
+	@Email
+	@NotBlank
+	@NotNull
+    private String email;
+	
 	@Column(name="username")
     private String username;
 	
 	@Column(name="password")
+	@NotBlank
+	@NotNull
     private String password;
 	
 	@Column(name="gender")
@@ -38,6 +50,7 @@ public class User {
 	//ORM
 	@ManyToOne()
 	@JoinColumn(name="user_type")
+	@NotNull
 	private UserType userType;
 	
 	/* NORMAL CTORSSSS LOMBOKSIZ
