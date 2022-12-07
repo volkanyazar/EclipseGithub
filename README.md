@@ -1,3 +1,3 @@
 # EclipseGithub
 
-BİLİMSEL DERGİ YÖNETİM SİSTEMİ ÜZERİNE YÜRÜTÜLEN BİR PROJE
+Java Spring Boot, Java,Jdbc, Java Swing, JSP projeleri
